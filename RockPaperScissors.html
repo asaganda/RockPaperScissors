@@ -1,0 +1,105 @@
+<script>
+  function computerPlay() {
+    // create array with the 3 different hand options
+    let hand = ["rock", "paper", "scissors"]
+    
+    // find a way to pick random index
+    let randompick = Math.floor(Math.random()*hand.length);
+    // return that index to console
+    // return document.write("<h1>" + hand[randompick] + "</h1>");
+    return hand[randompick]; // computer hand output
+    
+    // testing if the randompick variable worked
+    // console.log(hand[randompick]);
+  }
+
+  computerPlay();
+
+  // player and computer selection point counters to 
+  // keep track of who wins each round
+  let x = 0; // player 
+  let y = 0; // computer
+
+  function playRound() {
+    // ask player for choice, make lower case
+    // have computer choice ready
+    // compare player and computer choices
+    let playerSelection
+    let computerSelection = computerPlay();
+
+    playerSelection = prompt("What is your choice:");
+    playerSelection = playerSelection.toLowerCase();
+
+    // ask player user for their hand choice, make lower case, and assign
+    // to x for comparison
+    
+    // x = x.toLowerCase();
+    // x = prompt("What is your hand: ");
+    // x = x.toLowerCase();
+    // then compare players hand choice to y with below logic of game
+
+    
+
+    //logic of game
+    // we have to compare computer to player input
+    //scenarios
+    //1) if player has rock and computer has scissors OR player has scissors and computer has rock = Rock beats Scissors
+    //2) if player has scissors and computer has paper OR player has paper and computer has scissors = Scissors beats Paper
+    //3) if player has paper and computer has rock OR player has rock and computer has paper = Paper beats Rock
+    //4) if (else) they have same hand = it's a draw
+
+    // break down each if statement comparison even more 
+    // so that we can track who wins each round
+    // assign point value to player and computer when they win a round
+
+    if ((playerSelection == "rock" && computerSelection == "scissors")) {
+      x++;
+      return document.write("<h1>Rock beats Scissors</h1>");
+    } else if (playerSelection == "scissors" && computerSelection == "rock") {
+      y++;
+      return document.write("<h1>Rock beats Scissors</h1>");
+    } else if (playerSelection == "scissors" && computerSelection == "paper") {
+      x++;
+      return document.write("<h1>Scissors beats Paper</h1>");
+    } else if (playerSelection == "paper" && computerSelection == "scissors") {
+      y++;
+      return document.write("<h1>Scissors beats Paper</h1>");
+    } else if (playerSelection == "paper" && computerSelection == "rock") {
+      x++;
+      return document.write("<h1>Paper beats Rock</h1>");
+    } else if (playerSelection == "rock" && computerSelection == "paper") {
+      y++;
+      return document.write("<h1>Paper beats Rock</h1>");
+    } else {
+      return document.write("<h1>It's a draw</h1>");
+    }
+  
+  }
+
+    // console.log(computerSelection);
+    // document.write("<h1>Out with the old, in with the new!</h1>");
+    // console.log(playRound(playerSelection, computerSelection));
+
+  playRound();
+  
+
+  function game() {
+    // repeat the function playRound 5x
+    for (i = 0; i < 4; i++) {
+      playRound();  
+    }
+    // show values of x and y
+    console.log(x);
+    console.log(y);
+
+    // announce winner based on x/y counter
+    if (x > y) {
+      return document.write("<h1>Player won this round!</h1>");
+    } else {
+      return document.write("<h1>Computer won this round! Better luck next time!</h1>"); 
+    }
+
+  }
+
+  game();
+</script>
