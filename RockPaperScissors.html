@@ -5,9 +5,9 @@
     
     // find a way to pick random index
     let randompick = Math.floor(Math.random()*hand.length);
-    // return that index to console
-    // return document.write("<h1>" + hand[randompick] + "</h1>");
-    return hand[randompick]; // computer hand output
+
+    // computer hand output
+    return hand[randompick];
     
     // testing if the randompick variable worked
     // console.log(hand[randompick]);
@@ -21,24 +21,20 @@
   let y = 0; // computer
 
   function playRound() {
-    // ask player for choice, make lower case
+    // ask player for choice, make lower case, assign to variable
     // have computer choice ready
     // compare player and computer choices
+    
     let playerSelection
+    
+    // computer choice ready
     let computerSelection = computerPlay();
 
+    // ask player user for their hand choice and make lower case
     playerSelection = prompt("What is your choice:");
     playerSelection = playerSelection.toLowerCase();
-
-    // ask player user for their hand choice, make lower case, and assign
-    // to x for comparison
     
-    // x = x.toLowerCase();
-    // x = prompt("What is your hand: ");
-    // x = x.toLowerCase();
-    // then compare players hand choice to y with below logic of game
-
-    
+    // compare players hand choice with computer below with logic of game
 
     //logic of game
     // we have to compare computer to player input
