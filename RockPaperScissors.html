@@ -1,12 +1,12 @@
 <script>
   function computerPlay() {
     // create array with the 3 different hand options
-    let hand = ["rock", "paper", "scissors"]
-    
     // find a way to pick random index
+    // return computer hand output
+
+    let hand = ["rock", "paper", "scissors"]
     let randompick = Math.floor(Math.random()*hand.length);
 
-    // computer hand output
     return hand[randompick];
     
     // testing if the randompick variable worked
@@ -80,15 +80,16 @@
   
 
   function game() {
-    // repeat the function playRound 5x
+    // repeat function playRound 5x
+    // announce winner based on x/y counter
+
     for (i = 0; i < 4; i++) {
       playRound();  
     }
-    // show values of x and y
+    // show values of x and y - sanity check 
     console.log(x);
     console.log(y);
-
-    // announce winner based on x/y counter
+    
     if (x > y) {
       return document.write("<h1>Player won this round!</h1>");
     } else {
