@@ -38,28 +38,15 @@ function computerPlay() {
   // console.log(hand[randompick]);
 }
 
-// computerPlay();
-
 // player and computer selection point counters to 
 // keep track of who wins each round
 let x = 0; // player 
 let y = 0; // computer
 
-// let playerScore = x;
-// let computerScore = y;
-
-
 function playRound(playerSelection, computerSelection) {
   // ask player for choice, make lower case, assign to variable
   // have computer choice ready
   // compare player and computer choices
-  
-  // let playerSelection
-  
-  // computer choice ready
-  // let computerSelection = computerPlay();
-
-  // playerSelection = playerSelection.toLowerCase();
   
   // compare players hand choice with computer below with logic of game
 
@@ -98,10 +85,6 @@ function playRound(playerSelection, computerSelection) {
   }
 }
 
-  // console.log(computerSelection);
-  // document.write("<h1>Out with the old, in with the new!</h1>");
-  // console.log(playRound(playerSelection, computerSelection));
-// playRound(playerChoice, computerSelection);
 function decideWinner(){
   if (x === 5){
     alert("Player wins game!");
@@ -111,39 +94,3 @@ function decideWinner(){
     return;
   }
 }
-
-function game() {
-  // repeat function playRound 5x
-  // announce winner based on x/y counter
-
-  for (i = 0; i < 4; i++) {
-    playRound();  
-  }
-  // show values of x and y - sanity check 
-  console.log(x);
-  console.log(y);
-  
-  if (x > y) {
-    return document.write("<h1>Player won this round!</h1>");
-  } else {
-    return document.write("<h1>Computer won this round! Better luck next time!</h1>"); 
-  }
-
-}
-
-// game();
-
-// play just 1 round
-// nothing on page
-// user clicks 1 one of the choice buttons
-// the value is extracted to a variable
-
-// how do we play 1 round?
-// 1 round of game is played and win or lose is determined
-
-// const buttonOptions = document.querySelectorAll('.option');
-
-// buttonOptions.forEach(x => x.addEventListener('click', function(e){
-//   playerSelection = e.srcElement.innerHTML; // returns player choice
-//   console.log(playerSelection);
-// }));
