@@ -2,3 +2,31 @@
   width: 40%;
   margin:0 auto;
 }
+
+.computerScore,
+.playerScore {
+  font-size: 25px;
+}
+
+button.red {
+  font-size: 30px;
+  color: white;
+  background: #e13434;
+}
+button.blue {
+  font-size: 30px;
+  background: #1470db;
+  color: white;
+}
+button.orange {
+  font-size: 30px;
+  background: #ef5704;
+  color: white;
+}
+
+.scorestructure {
+  display: flex;
+}
+.compstyle {
+  margin-right: 20px;
+}
