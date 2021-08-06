@@ -15,8 +15,7 @@ buttonOptions.forEach(a => a.addEventListener('click', function(e){
   let computerSelection = computerPlay();
   playRound(playerChoice, computerSelection);
   gameScore()
-  decideWinner()
-
+  decideWinner(x,y)
 }));
 
 function gameScore(){
@@ -85,12 +84,41 @@ function playRound(playerSelection, computerSelection) {
   }
 }
 
-function decideWinner(){
+function decideWinner(x, y){
   if (x === 5){
     alert("Player wins game!");
+    disableButton()
+    resetGame()
+    
   } else if (y === 5){
     alert("Computer wins game!");
+    disableButton()
+    resetGame()
   } else {
     return;
   }
+}
+
+function disableButton(){
+  const choiceButtons = document.querySelectorAll('.option');
+  for (var i = 0; i < choiceButtons.length; i++) {
+    choiceButtons[i].disabled = true;
+  }
+}
+
+function resetGame(){
+  // if (x === 5 || y === 5) {
+  //   console.log("game reset");
+  //   gameResult.getElementByTag(h3).innerHTML = '';
+  //   "game over! <button>click here to reset!</button>";
+  // }
+  gameResult.innerHTML = "game over! <button class='new-game'>click here to reset game!</button>";
+  let newGame = document.querySelector('.new-game');
+  newGame.addEventListener('click', function(){
+    x = 0;
+    y = 0;
+    pScore.textContent = 0;
+    cScore.textContent = 0;
+  });
+  // gameResult.appendChild(document.createElement('h2')).innerHTML = "Results:";
 }
