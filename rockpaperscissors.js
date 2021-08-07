@@ -88,22 +88,21 @@ function playRound(playerSelection, computerSelection) {
 function decideWinner(x, y){
   if (x === 5){
     alert("Player wins game!");
-    disableButton()
+    disableButton(true)
     resetGame()
-    
   } else if (y === 5){
     alert("Computer wins game!");
-    disableButton()
+    disableButton(true)
     resetGame()
   } else {
     return;
   }
 }
 
-function disableButton(){
+function disableButton(x){
   const choiceButtons = document.querySelectorAll('.option');
   for (var i = 0; i < choiceButtons.length; i++) {
-    choiceButtons[i].disabled = true;
+    choiceButtons[i].disabled = x;
   }
 }
 
@@ -116,12 +115,6 @@ function clearRoundResult(){
 }
 
 function resetGame(){
-  // if (x === 5 || y === 5) {
-  //   console.log("game reset");
-  //   gameResult.getElementByTag(h3).innerHTML = '';
-  //   "game over! <button>click here to reset!</button>";
-  // }
-  // gameResult.innerHTML = "game over! <button class='new-game'>click here to reset game!</button>";
   let reset = document.querySelector('.reset');
   reset.style.display = 'block';
   let newGame = document.querySelector('.new-game');
@@ -131,5 +124,12 @@ function resetGame(){
     pScore.textContent = 0;
     cScore.textContent = 0;
     clearRoundResult();
+    restartGame();
   });
+}
+
+function restartGame(){
+  disableButton(false);
+  let reset = document.querySelector('.reset');
+  reset.style.display = 'none';
 }
