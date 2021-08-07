@@ -13,6 +13,7 @@ buttonOptions.forEach(a => a.addEventListener('click', function(e){
 
   // computer choice ready
   let computerSelection = computerPlay();
+  clearRoundResult()
   playRound(playerChoice, computerSelection);
   gameScore()
   decideWinner(x,y)
@@ -103,6 +104,14 @@ function disableButton(){
   const choiceButtons = document.querySelectorAll('.option');
   for (var i = 0; i < choiceButtons.length; i++) {
     choiceButtons[i].disabled = true;
+  }
+}
+
+function clearRoundResult(){
+  let x = document.querySelectorAll('#game-results h3');
+  console.log(x[0]);
+  for (i = 0; i < x.length; i++){
+    x[i].remove();
   }
 }
 
