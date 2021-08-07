@@ -30,3 +30,7 @@ button.orange {
 .compstyle {
   margin-right: 20px;
 }
+
+.reset {
+  display: none;
+}

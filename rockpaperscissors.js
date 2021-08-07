@@ -121,13 +121,15 @@ function resetGame(){
   //   gameResult.getElementByTag(h3).innerHTML = '';
   //   "game over! <button>click here to reset!</button>";
   // }
-  gameResult.innerHTML = "game over! <button class='new-game'>click here to reset game!</button>";
+  // gameResult.innerHTML = "game over! <button class='new-game'>click here to reset game!</button>";
+  let reset = document.querySelector('.reset');
+  reset.style.display = 'block';
   let newGame = document.querySelector('.new-game');
   newGame.addEventListener('click', function(){
     x = 0;
     y = 0;
     pScore.textContent = 0;
     cScore.textContent = 0;
+    clearRoundResult();
   });
-  // gameResult.appendChild(document.createElement('h2')).innerHTML = "Results:";
 }
